@@ -1,0 +1,14 @@
+<h2>My Templates</h2>
+<ul class="valueTemplates">
+  <li *ngFor="let valueTemplate of valueTemplates"
+      [class.selected]="valueTemplate === selectedTemplate"
+      (click)="onSelect(valueTemplate)">
+      <span class="badge">{{valueTemplate.id}}</span> {{valueTemplate.name}}
+  </li>
+</ul>
+<div *ngIf="selectedTemplate">
+  <h3>
+    Edit {{selectedTemplate.name | uppercase}}
+  </h3>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
