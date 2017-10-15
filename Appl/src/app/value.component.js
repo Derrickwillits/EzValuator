@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var user_template_service_1 = require("./user-template.service");
+var usertemplate_service_1 = require("./usertemplate.service");
 var router_1 = require("@angular/router");
 var ValueComponent = (function () {
     function ValueComponent(userTemplateService, router) {
@@ -35,11 +35,11 @@ var ValueComponent = (function () {
 ValueComponent = __decorate([
     core_1.Component({
         selector: 'my-values',
-        templateUrl: './value.component.html',
-        styleUrls: ['./value.component.css'],
-        providers: [user_template_service_1.UserTemplateService]
+        templateUrl: './html/value.component.html',
+        styleUrls: ['./css/value.component.css'],
+        providers: [usertemplate_service_1.UserTemplateService]
     }),
-    __metadata("design:paramtypes", [user_template_service_1.UserTemplateService, router_1.Router])
+    __metadata("design:paramtypes", [usertemplate_service_1.UserTemplateService, router_1.Router])
 ], ValueComponent);
 exports.ValueComponent = ValueComponent;
 //# sourceMappingURL=value.component.js.map

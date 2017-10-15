@@ -3,13 +3,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import {UserTemplateService} from './user-template.service';
+import {UserTemplateService} from './usertemplate.service';
 import {UserTemplate} from './usertemplate';
 
 @Component({
   selector: 'value-detail',
-  templateUrl: './value-detail.component.html',
-  styleUrls: ['./value-detail.component.css']
+  templateUrl: './html/value-detail.component.html',
+  styleUrls: ['./css/value-detail.component.css']
 })
 export class ValueDetailComponent implements OnInit {
   valueTemplate: UserTemplate;

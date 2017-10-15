@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import {UserTemplate} from './usertemplate';
-import {UserTemplateService} from './user-template.service'
+import {UserTemplateService} from './usertemplate.service'
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'my-values',
-  templateUrl: './value.component.html',
-  styleUrls: ['./value.component.css'],
+  templateUrl: './html/value.component.html',
+  styleUrls: ['./css/value.component.css'],
   providers: [UserTemplateService]
 })
 export class ValueComponent implements OnInit { 
