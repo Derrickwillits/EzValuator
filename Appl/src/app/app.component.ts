@@ -2,16 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template:`
-    <h1>{{title}}</h1>
-    <nav>
-        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        <a routerLink="/values" routerLinkActive="active">Templates</a>
-    </nav>
-    <router-outlet></router-outlet>
-    `,
+    templateUrl:'./app.component.html',
     styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-    title = 'Welcome to EZ Valuator';
+    title = 'EZ Valuator';
 }
