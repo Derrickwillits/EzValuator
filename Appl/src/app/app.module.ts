@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import { ValueDetailComponent } from './value-detail.component';
-import { UserTemplateService } from './user-template.service';
+import { UserTemplateService } from './usertemplate.service';
 import { ValueComponent } from './value.component';
 import { DashboardComponent } from './dashboard.component';
 import { AppRoutingModule } from './app-routing.module';

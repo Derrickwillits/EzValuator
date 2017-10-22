@@ -12,7 +12,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 require("rxjs/add/operator/switchMap");
-var user_template_service_1 = require("./user-template.service");
+var usertemplate_service_1 = require("./usertemplate.service");
 var ValueDetailComponent = (function () {
     function ValueDetailComponent(userTemplateService, route, location) {
         this.userTemplateService = userTemplateService;
@@ -33,10 +33,10 @@ var ValueDetailComponent = (function () {
 ValueDetailComponent = __decorate([
     core_1.Component({
         selector: 'value-detail',
-        templateUrl: './value-detail.component.html',
-        styleUrls: ['./value-detail.component.css']
+        templateUrl: './html/value-detail.component.html',
+        styleUrls: ['./css/value-detail.component.css']
     }),
-    __metadata("design:paramtypes", [user_template_service_1.UserTemplateService,
+    __metadata("design:paramtypes", [usertemplate_service_1.UserTemplateService,
         router_1.ActivatedRoute,
         common_1.Location])
 ], ValueDetailComponent);

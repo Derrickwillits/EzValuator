@@ -10,7 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var value_detail_component_1 = require("./value-detail.component");
-var user_template_service_1 = require("./user-template.service");
+var usertemplate_service_1 = require("./usertemplate.service");
 var value_component_1 = require("./value.component");
 var dashboard_component_1 = require("./dashboard.component");
 var app_routing_module_1 = require("./app-routing.module");
@@ -30,7 +30,7 @@ AppModule = __decorate([
             value_component_1.ValueComponent,
             dashboard_component_1.DashboardComponent
         ],
-        providers: [user_template_service_1.UserTemplateService],
+        providers: [usertemplate_service_1.UserTemplateService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

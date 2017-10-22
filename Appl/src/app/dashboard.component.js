@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var user_template_service_1 = require("./user-template.service");
+var usertemplate_service_1 = require("./usertemplate.service");
 var DashboardComponent = (function () {
     function DashboardComponent(userTemplateService) {
         this.userTemplateService = userTemplateService;
@@ -25,10 +25,10 @@ var DashboardComponent = (function () {
 DashboardComponent = __decorate([
     core_1.Component({
         selector: 'my-dashboard',
-        templateUrl: './dashboard.component.html',
-        styleUrls: ['./dashboard.component.css']
+        templateUrl: './html/dashboard.component.html',
+        styleUrls: ['./css/dashboard.component.css']
     }),
-    __metadata("design:paramtypes", [user_template_service_1.UserTemplateService])
+    __metadata("design:paramtypes", [usertemplate_service_1.UserTemplateService])
 ], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map
