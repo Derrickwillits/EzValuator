@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { UserTemplate } from './usertemplate';
-import { UserTemplateService } from './user-template.service';
+import { UserTemplateService } from './usertemplate.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  templateUrl: './html/dashboard.component.html',
+  styleUrls: ['./css/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
     userTemplates: UserTemplate[] = [];
