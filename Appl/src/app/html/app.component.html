@@ -1,9 +1,18 @@
+<mat-toolbar class="toolbar" color="primary">
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <span>EzValuator</span>
+      <span class="toolbar-spacer"></span>
+      <a href="signin">Sign In</a>
+</mat-toolbar>
+<mat-sidenav-container class="example-sidenav-fab-container">
+  <mat-sidenav #sidenav mode="over" opened="false">
+      <ul *ngFor="let data of myData">
+        <a href={{data.link}}>{{data.name}}</a>
+      </ul>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
+ 
 
-<div id="banner">
-    <h1>{{title}}</h1>
-</div>
-<nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/values" routerLinkActive="active">Templates</a>
-</nav>
-<router-outlet></router-outlet>
