@@ -1,1 +1,14 @@
-<div>{{text}}</div>
+<h3>Choose Your Project or Add a new one!</h3>
+<button mat-raised-button color="primary" (click)="newProjectFlag = !newProjectFlag">{{newProjectFlag ? 'Hide New Project' : 'Add New Project'}}</button>
+<form class="example-form" *ngIf="newProjectFlag">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="New Project Name" value="">
+    </mat-form-field>
+</form>
+<div>
+    <mat-selection-list>
+        <mat-list-option *ngFor="let project of projects">
+            {{project}}
+        </mat-list-option>
+    </mat-selection-list>
+</div>

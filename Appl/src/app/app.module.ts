@@ -9,7 +9,9 @@ import {
     MatMenuModule, 
     MatToolbarModule, 
     MatIconModule, 
-    MatSidenavModule } from '@angular/material';
+    MatSidenavModule,
+    MatListModule,
+    MatInputModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -40,6 +42,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatListModule,
+    MatInputModule,
     AppRoutingModule
   ],
   providers: [],

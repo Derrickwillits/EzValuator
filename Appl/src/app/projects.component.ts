@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { InternalLink } from './internal-link';
 
 @Component({
-  selector: 'projects',
+  selector: 'user-projects',
   templateUrl: './html/projects.component.html',
-  //styleUrls: ['./css/home.component.css']
+  styleUrls: ['./css/projects.component.css']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
 
-    text: string = 'This page is the home to projects for Ez Valuator!'
+    newProjectFlag: boolean;
+    projects = [
+      'ABC Painter',
+      'Best Restaurant',
+      '1234 BrewHouse',
+    ]
+
+    ngOnInit(){
+      this.newProjectFlag = false;
+    }
 
 }
