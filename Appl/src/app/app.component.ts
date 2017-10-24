@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { InternalLink } from './internal-link';
+import { InternalLink } from './objects/internal-link';
 
 @Component({
   selector: 'app-root',

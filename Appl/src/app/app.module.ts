@@ -11,7 +11,8 @@ import {
     MatIconModule, 
     MatSidenavModule,
     MatListModule,
-    MatInputModule } from '@angular/material';
+    MatInputModule,
+    MatTableModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatSidenavModule,
     MatListModule,
     MatInputModule,
+    MatTableModule,
     AppRoutingModule
   ],
   providers: [],

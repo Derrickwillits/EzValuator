@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { InternalLink } from './internal-link';
 
 @Component({
   selector: 'user-projects',

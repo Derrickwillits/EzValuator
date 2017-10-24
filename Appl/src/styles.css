@@ -2,8 +2,9 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
-/*This is used for resizing it to look like a mobile phone app.*/
+/*This is used for resizing it to look like a mobile phone app.
 body {
     padding: 2em 23em;
     background:lightgrey;
 }
+*/

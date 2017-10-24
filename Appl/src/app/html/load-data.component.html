@@ -1,1 +1,26 @@
-<div>{{text}}</div>
+<br>
+<button mat-raised-button color="primary" id="ManualButton" (click)="toggleManual()">Load Data Manually</button>
+<button mat-raised-button color="primary" id="AutoButton" (click)="toggleAuto()">Load Data From Online</button>
+<div *ngIf="loadManualFlag">
+  <div class="data-editor">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <!--ID Column-->
+      <ng-container matColumnDef="categoryID">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+      <!--Name Column-->
+      <ng-container matColumnDef="categoryName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+      <!--Need to enter dynamic columns per year-->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>  
+</div>
+<div *ngIf="loadAutoFlag">
+    Auto Load Area
+</div>
+
