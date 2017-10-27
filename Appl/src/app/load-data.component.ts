@@ -12,6 +12,8 @@ export class LoadDataComponent implements OnInit {
 
     loadManualFlag: boolean;
     loadAutoFlag: boolean;
+    removeYearFlag: boolean;
+    addYearFlag: boolean;
     dataSource: UserDataService | null;
     displayedColumns = ['categoryID', 'categoryName'];
 
@@ -27,9 +29,33 @@ export class LoadDataComponent implements OnInit {
       this.loadManualFlag = false;
     };
 
+    addYearToggle(): void {
+      this.addYearFlag = !this.addYearFlag;
+      this.removeYearFlag = false;
+    };
+
+    addYearCommit(): void {
+      //TODO add column from excel-grid component
+    };
+
+    removeYearToggle(): void {
+      this.removeYearFlag = !this.removeYearFlag;
+      this.addYearFlag = false;
+    };
+
+    removeYearCommit(): void {
+      //TODO remove column from excel-grid component
+    };
+
+    recalculateExcelGrid(): void {
+      //TODO add logic to reset calculated variables inside the sheet.
+    }
+
     ngOnInit(): void {
       this.loadAutoFlag = false;
       this.loadManualFlag = false;
+      this.removeYearFlag = false;
+      this.addYearFlag = false;
       this.dataSource = new UserDataService();
     };
 }

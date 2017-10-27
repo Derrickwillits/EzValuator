@@ -2,7 +2,25 @@
 <button mat-raised-button color="primary" id="ManualButton" (click)="toggleManual()">Load Data Manually</button>
 <button mat-raised-button color="primary" id="AutoButton" (click)="toggleAuto()">Load Data From Online</button>
 <div *ngIf="loadManualFlag">
-  <excel-grid></excel-grid>
+  <br>
+  <button mat-raised-button color="secondary" id="RecalculateSheetButton" (click)="recalculateExcelGrid()">Recalculate Vaues</button>  
+  <button mat-raised-button color="secondary" id="AddYearButton" (click)="addYearToggle()">Add Year</button>
+  <button mat-raised-button color="secondary" id="RemoveYearButton" (click)="removeYearToggle()">Remove Year</button>
+  <form class="example-form" *ngIf="addYearFlag">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Year to Add" value="">
+      </mat-form-field>
+      <button mat-raised-button color="primary" id="AddYearButtonCommit" (click)="addYearCommit()">Commit Add Year</button>
+  </form>
+  <form class="example-form" *ngIf="removeYearFlag">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Year to Remove" value="">
+      </mat-form-field>
+      <button mat-raised-button color="primary" id="RemoveYearButtonCommit" (click)="removeYearCommit()">Commit Remove Year</button>
+    </form>
+  <div>
+      <excel-grid></excel-grid>
+  </div>
 </div>
 <div *ngIf="loadAutoFlag">
     Auto Load Area

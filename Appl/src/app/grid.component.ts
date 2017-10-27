@@ -9,8 +9,7 @@ export class GridComponent {
 
     //hot table items below
     private exampleCategories: string[] = ['Revenue', 'COGS', 'Profit', 'Taxes', 'Net Income']
-    private colHeaders: string[] = ['Category', '2016', '2015', '2014',
-    'Favorite food', 'Price', 'Is active'];
+    private colHeaders: string[] = ['Category', '2016', '2015', '2014'];
     private colWidths: number[] = [null, null, null, null, null, null, 30];
     private columns: any[] = [
         {
