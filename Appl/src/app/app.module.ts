@@ -15,13 +15,17 @@ import {
     MatTableModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { ProjectsComponent } from './projects.component';
 import { LoadDataComponent } from './load-data.component';
 import { AdjustFinancialsComponent } from './adjust-financials.component';
 import { ReportsComponent } from './reports.component';
+import { GridComponent } from './grid.component';
 import { AppRoutingModule } from './app-routing.module';
+
+import { HotTableModule } from 'ng2-handsontable';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProjectsComponent,
     LoadDataComponent,
     AdjustFinancialsComponent,
-    ReportsComponent
+    ReportsComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatListModule,
     MatInputModule,
     MatTableModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HotTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

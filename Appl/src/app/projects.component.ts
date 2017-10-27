@@ -13,6 +13,7 @@ export class ProjectsComponent implements OnInit {
       'ABC Painter',
       'Best Restaurant',
       '1234 BrewHouse',
+      'Races cool restaurant'
     ]
 
     ngOnInit(){
