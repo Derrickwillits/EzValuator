@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-/*This is used for resizing it to look like a mobile phone app.
+/* Here are some default themes google provides.
+deeppurple-amber.css
+indigo-pink.css
+pink-bluegrey.css
+purple-green.css
+*/
+
+/*This is used for resizing it to look like a mobile phone app.*/
 body {
     padding: 2em 23em;
     background:lightgrey;
 }
-*/

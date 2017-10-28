@@ -1,14 +1,41 @@
 <h3>Choose Your Project or Add a new one!</h3>
-<button mat-raised-button color="primary" (click)="newProjectFlag = !newProjectFlag">{{newProjectFlag ? 'Hide New Project' : 'Add New Project'}}</button>
+<button mat-raised-button color="primary" (click)="toggleProjectAdd()">{{newProjectFlag ? 'Hide New Project' : 'Add New Project'}}</button>
+<button mat-raised-button color="primary" (click)="toggleProjectEdit()">{{editProjectFlag ? 'Hide Edit Project' : 'Edit Selected Project'}}</button>
+<button mat-raised-button color="primary" (click)="toggleProjectDelete()">{{deleteProjectFlag ? 'Hide Delete Project' : 'Delete Selected Project'}}</button>
 <form class="example-form" *ngIf="newProjectFlag">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="New Project Name" value="">
+        <input matInput placeholder="New Project Name" [(ngModel)]="newProjectName" name="input">
     </mat-form-field>
+    <button mat-raised-button color="secondary" id="SubmitProjectButton" (click)="addProject()">Add Your New Project</button>
+    <label>{{newProjectSuccessMessage}}</label>
 </form>
+
+
+<form class="example-form" *ngIf="editProjectFlag">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Edit Project Name" [(ngModel)]="editProjectName" name="editProject">
+    </mat-form-field>
+    <button mat-raised-button color="secondary" id="SubmitEditProjectButton" (click)="editProject()">Update Your Project</button>
+    <label>{{editProjectSuccessMessage}}</label>
+</form>
+
+<form class="example-form" *ngIf="deleteProjectFlag">
+    <br>
+    <button mat-raised-button color="secondary" id="SubmitDeleteProjectButton" (click)="toggleProjectReallyDelete()">{{reallyDeleteProjectFlag ? 'Hide Delete Active Project Validation' : 'Delete Your Active Project'}}</button>
+    <div *ngIf="reallyDeleteProjectFlag">
+        <br>
+        <label>Are you sure?</label>
+        <button mat-raised-button color="secondary" id="SubmitReallyDeleteProjectButton" (click)="deleteProject()">Yes, I really mean it!</button>
+        <button mat-raised-button color="secondary" id="DoNotSubmitReallyDeleteProjectButton" (click)="toggleProjectReallyDelete()">No!  Just Kidding!</button>
+        <label>{{deleteProjectSuccessMessage}}</label>
+    </div> 
+</form>
+
 <div>
-    <mat-selection-list>
-        <mat-list-option *ngFor="let project of projects">
-            {{project}}
-        </mat-list-option>
-    </mat-selection-list>
+    <div class="example-selected-value">Your selected project is: {{activeProject}}</div>
+    <mat-radio-group class="example-radio-group" [(ngModel)]="activeProject">
+        <mat-radio-button class="example-radio-button" *ngFor="let project of projects" [value]="project">
+                {{project}}
+        </mat-radio-button>
+    </mat-radio-group>
 </div>

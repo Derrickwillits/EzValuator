@@ -12,7 +12,8 @@ import {
     MatSidenavModule,
     MatListModule,
     MatInputModule,
-    MatTableModule } from '@angular/material';
+    MatTableModule,
+    MatRadioModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 
@@ -51,6 +52,7 @@ import { HotTableModule } from 'ng2-handsontable';
     MatListModule,
     MatInputModule,
     MatTableModule,
+    MatRadioModule,
     AppRoutingModule,
     HotTableModule
   ],
