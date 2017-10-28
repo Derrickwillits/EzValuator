@@ -12,6 +12,8 @@ export class LoadDataComponent implements OnInit {
 
     loadManualFlag: boolean;
     loadAutoFlag: boolean;
+    incomeStatementFlag: boolean;
+    balanceSheetFlag: boolean;
     removeYearFlag: boolean;
     addYearFlag: boolean;
     dataSource: UserDataService | null;
@@ -27,6 +29,16 @@ export class LoadDataComponent implements OnInit {
     toggleAuto(): void {
       this.loadAutoFlag = !this.loadAutoFlag;
       this.loadManualFlag = false;
+    };
+
+    toggleIncomeStatement(): void {
+      this.incomeStatementFlag = !this.incomeStatementFlag;
+      this.balanceSheetFlag = false;
+    };
+
+    toggleBalanceSheet(): void {
+      this.balanceSheetFlag = !this.balanceSheetFlag;
+      this.incomeStatementFlag = false;
     };
 
     addYearToggle(): void {
@@ -54,6 +66,8 @@ export class LoadDataComponent implements OnInit {
     ngOnInit(): void {
       this.loadAutoFlag = false;
       this.loadManualFlag = false;
+      this.incomeStatementFlag = false;
+      this.balanceSheetFlag = false;
       this.removeYearFlag = false;
       this.addYearFlag = false;
       this.dataSource = new UserDataService();

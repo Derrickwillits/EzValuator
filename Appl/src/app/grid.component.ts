@@ -23,6 +23,7 @@ export class GridComponent {
         }
       ];
     private options: any = {
+      height: 150,
       stretchH: 'all',
       columnSorting: true,
       contextMenu: [

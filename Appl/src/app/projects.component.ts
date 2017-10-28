@@ -47,9 +47,10 @@ export class ProjectsComponent implements OnInit {
         this.projects.push(this.newProjectName);
         this.newProjectSuccessMessage = "Successfully added your project!";
       } else {
-        if(this.newProjectName = '') {
+        if(this.newProjectName === '') {
           this.newProjectSuccessMessage = "Please enter a valid project name!";
-        } else {
+        } 
+        else {
           this.newProjectSuccessMessage = "That Project already exists!";
         }
       };
@@ -75,7 +76,7 @@ export class ProjectsComponent implements OnInit {
         this.activeProject = this.editProjectName;
         this.editProjectSuccessMessage = "Successfully updated your project!";
       } else {
-        if(this.editProjectName = '') {
+        if(this.editProjectName === '') {
           this.editProjectSuccessMessage = "Please enter a valid project name!";
         } else { 
           if(activeIndex === -1){
