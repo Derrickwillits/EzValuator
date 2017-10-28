@@ -12,9 +12,9 @@
         <button mat-raised-button color="secondary" id="RemoveYearButton" (click)="removeYearToggle()">{{removeYearFlag ? 'Hide Remove Year' : 'Remove Year'}}</button>
         <form class="example-form" *ngIf="addYearFlag">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Year to Add" value="">
+                <input matInput placeholder="Year to Add" [(ngModel)]="newYearName" name="newYear">
             </mat-form-field>
-            <button mat-raised-button color="secondary" id="AddYearButtonCommit" (click)="addYearCommit()">Commit Add Year</button>
+            <button mat-raised-button color="secondary" id="AddYearButtonCommit" (click)="addYearCommit(newYear.value)">Commit Add Year</button>
         </form>
         <form class="example-form" *ngIf="removeYearFlag">
             <mat-form-field class="example-full-width">
@@ -24,7 +24,7 @@
         </form>
         <div>
             <h3>Revenue</h3>
-            <excel-grid></excel-grid>
+            <excel-grid [passedColHeaders]="columnHeaders"></excel-grid>
             <label>Total Revenue:</label>
         </div>
         <br>

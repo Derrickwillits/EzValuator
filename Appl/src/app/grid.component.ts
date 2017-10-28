@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'excel-grid',
   templateUrl: './html/grid.component.html',
   styleUrls: ['./css/grid.component.css']
 })
-export class GridComponent {
+export class GridComponent implements OnInit {
+
+    //Passed in configurations
+    @Input() passedColHeaders: string[];
 
     //hot table items below
     private exampleCategories: string[] = ['Revenue', 'COGS', 'Profit', 'Taxes', 'Net Income']
-    private colHeaders: string[] = ['Category', '2016', '2015', '2014'];
+    private colHeaders: string[];
     private colWidths: number[] = [null, null, null, null, null, null, 30];
     private columns: any[] = [
         {
@@ -37,5 +40,9 @@ export class GridComponent {
     
     private afterOnCellMouseDown(e: any) {
     console.log(e);
+    };
+
+    ngOnInit(): void {
+      this.colHeaders = this.passedColHeaders;
     };
 }

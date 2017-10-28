@@ -10,6 +10,7 @@ import { UserDataService } from './services/user-data.service';
 })
 export class LoadDataComponent implements OnInit {
 
+    //Display properties
     loadManualFlag: boolean;
     loadAutoFlag: boolean;
     incomeStatementFlag: boolean;
@@ -18,6 +19,10 @@ export class LoadDataComponent implements OnInit {
     addYearFlag: boolean;
     dataSource: UserDataService | null;
     displayedColumns = ['categoryID', 'categoryName'];
+    newYearName: string;
+
+    //Excel Grid Properties
+    columnHeaders = ['Categories', '2016', '2015', '2014'];
 
     constructor(private userDataService: UserDataService) {};
 
@@ -47,7 +52,8 @@ export class LoadDataComponent implements OnInit {
     };
 
     addYearCommit(): void {
-      //TODO add column from excel-grid component
+      this.columnHeaders.push(this.newYearName); 
+      this.newYearName = '';
     };
 
     removeYearToggle(): void {
@@ -70,6 +76,7 @@ export class LoadDataComponent implements OnInit {
       this.balanceSheetFlag = false;
       this.removeYearFlag = false;
       this.addYearFlag = false;
+      this.newYearName = '';
       this.dataSource = new UserDataService();
     };
 }
