@@ -14,7 +14,7 @@
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="Year to Add" [(ngModel)]="newYearName" name="newYear">
             </mat-form-field>
-            <button mat-raised-button color="secondary" id="AddYearButtonCommit" (click)="addYearCommit(newYear.value)">Commit Add Year</button>
+            <button mat-raised-button color="secondary" id="AddYearButtonCommit" (click)="addYearCommit()">Commit Add Year</button>
         </form>
         <form class="example-form" *ngIf="removeYearFlag">
             <mat-form-field class="example-full-width">
