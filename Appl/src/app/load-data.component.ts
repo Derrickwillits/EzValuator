@@ -19,10 +19,17 @@ export class LoadDataComponent implements OnInit {
     addYearFlag: boolean;
     dataSource: UserDataService | null;
     displayedColumns = ['categoryID', 'categoryName'];
-    newYearName: string;
+    newYearName: number;
+    removeYearName: number;
+    headerYears = [2014,2015,2016];
+    loadCategories: CategoryRow[];
 
-    //Excel Grid Properties
-    columnHeaders = ['Categories', '2016', '2015', '2014'];
+    // //Excel Grid Properties
+    // columnHeaders = ['Categories', '2016', '2015', '2014'];
+    // numberOfColumns = 4;
+    // gridDataRevenue = [{name: 'Revenue'}, {name: 'MoreRevenue'}, {name: 'EvenMoreRevenue'}];
+    // gridDataCogs = [{name: 'CoGS'}, {name: 'MoreCoGS'}, {name: 'EvenMoreCoGS'}];
+    // gridDataExpenses = [{name: 'Expenses'}, {name: 'MoreExpenses'}, {name: 'EvenMoreExpenses'}];
 
     constructor(private userDataService: UserDataService) {};
 
@@ -52,8 +59,10 @@ export class LoadDataComponent implements OnInit {
     };
 
     addYearCommit(): void {
-      this.columnHeaders.push(this.newYearName); 
-      this.newYearName = '';
+      this.headerYears.push(this.newYearName);
+      this.loadCategories.forEach(x => x.details.push(0));
+      this.newYearName = null;
+
     };
 
     removeYearToggle(): void {
@@ -62,7 +71,10 @@ export class LoadDataComponent implements OnInit {
     };
 
     removeYearCommit(): void {
-      //TODO remove column from excel-grid component
+      var index = this.headerYears.indexOf(this.removeYearName);
+      this.headerYears.splice(index, 1);
+      this.loadCategories.forEach(x => x.details.splice(index, 1));
+      this.removeYearName = null;
     };
 
     recalculateExcelGrid(): void {
@@ -76,7 +88,18 @@ export class LoadDataComponent implements OnInit {
       this.balanceSheetFlag = false;
       this.removeYearFlag = false;
       this.addYearFlag = false;
-      this.newYearName = '';
       this.dataSource = new UserDataService();
+
+      this.loadCategories = new Array<CategoryRow>();
+      var category1 = new CategoryRow();
+      category1.id = 2;
+      category1.name = "Revenue";
+      category1.details = [1000, 2000, 3000];
+      var category2 = new CategoryRow();
+      category2.id = 3;
+      category2.name = "More Revenue";
+      category2.details = [4000, 5000, 6000];
+      this.loadCategories.push(category1);
+      this.loadCategories.push(category2);
     };
 }

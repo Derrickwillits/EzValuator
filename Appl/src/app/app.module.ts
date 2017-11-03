@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import { 
     MatButtonModule,
     MatCardModule,
@@ -24,7 +25,9 @@ import { LoadDataComponent } from './load-data.component';
 import { AdjustFinancialsComponent } from './adjust-financials.component';
 import { ReportsComponent } from './reports.component';
 import { GridComponent } from './grid.component';
+import { TreeGridComponent } from './tree-grid.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoryDataService } from './services/category-data.service';
 
 import { HotTableModule } from 'ng2-handsontable';
 
@@ -36,7 +39,8 @@ import { HotTableModule } from 'ng2-handsontable';
     LoadDataComponent,
     AdjustFinancialsComponent,
     ReportsComponent,
-    GridComponent
+    GridComponent,
+    TreeGridComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +58,10 @@ import { HotTableModule } from 'ng2-handsontable';
     MatTableModule,
     MatRadioModule,
     AppRoutingModule,
-    HotTableModule
+    HotTableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ CategoryDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

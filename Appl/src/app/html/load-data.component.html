@@ -3,11 +3,10 @@
 <button mat-raised-button color="primary" id="AutoButton" (click)="toggleAuto()">Load Data From Online</button>
 <div *ngIf="loadManualFlag">
     <br>
-    <button mat-raised-button color="primary" id="IncomeStatement" (click)="toggleIncomeStatement()">Income Statement</button>
-    <button mat-raised-button color="primary" id="BalanceSheet" (click)="toggleBalanceSheet()">Balance Sheet</button>
+    <button mat-raised-button color="secondary" id="IncomeStatement" (click)="toggleIncomeStatement()">Income Statement</button>
+    <button mat-raised-button color="secondary" id="BalanceSheet" (click)="toggleBalanceSheet()">Balance Sheet</button>
     <div *ngIf="incomeStatementFlag">
         <br>
-        <button mat-raised-button color="secondary" id="RecalculateSheetButton" (click)="recalculateExcelGrid()">Recalculate Vaues</button>
         <button mat-raised-button color="secondary" id="AddYearButton" (click)="addYearToggle()">{{addYearFlag ? 'Hide Add Year' : 'Add Year'}}</button>
         <button mat-raised-button color="secondary" id="RemoveYearButton" (click)="removeYearToggle()">{{removeYearFlag ? 'Hide Remove Year' : 'Remove Year'}}</button>
         <form class="example-form" *ngIf="addYearFlag">
@@ -18,25 +17,26 @@
         </form>
         <form class="example-form" *ngIf="removeYearFlag">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Year to Remove" value="">
+                <input matInput placeholder="Year to Remove" value="" [(ngModel)]="removeYearName" name="removeYear">
             </mat-form-field>
             <button mat-raised-button color="secondary" id="RemoveYearButtonCommit" (click)="removeYearCommit()">Commit Remove Year</button>
         </form>
         <div>
             <h3>Revenue</h3>
-            <excel-grid [passedColHeaders]="columnHeaders"></excel-grid>
+            <tree-grid [inputColumns]="headerYears" [categories]="loadCategories"></tree-grid>
+            <!--excel-grid [passedColHeaders]="columnHeaders" [passedData]="gridDataRevenue" [passedNumberOfColumns]="numberOfColumns"></excel-grid-->
             <label>Total Revenue:</label>
         </div>
         <br>
         <div>
             <h3>Cost of Goods Sold</h3>
-            <excel-grid></excel-grid>
+            <!--excel-grid [passedColHeaders]="columnHeaders" [passedData]="gridDataCogs" [passedNumberOfColumns]="numberOfColumns"></excel-grid!-->
             <label>Total CoGs:</label>
         </div>
         <br>
         <div>
             <h3>Expenses</h3>
-            <excel-grid></excel-grid>
+            <!--excel-grid [passedColHeaders]="columnHeaders" [passedData]="gridDataExpenses" [passedNumberOfColumns]="numberOfColumns"></excel-grid-->
             <label>Total Exenses:</label>
         </div>
     </div>

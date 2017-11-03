@@ -1,0 +1,25 @@
+[{
+    "id" : 1,
+    "name" : "Revenue Section",
+    "details" : [],
+    "children" : [
+        {
+        "id" : 2,
+        "name" : "Revenue",
+        "details" : [1000, 2000, 3000],
+        "children" : []
+        },
+        {
+            "id" : 3,
+            "name" : "More Revenue",
+            "details" : [4000, 5000, 6000],
+            "children" : []
+        },
+        {
+            "id" : 4,
+            "name" : "Even More Revenue",
+            "details" : [7000, 8000, 9000],
+            "children" : []
+        }
+    ]
+}]
