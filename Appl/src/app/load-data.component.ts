@@ -59,10 +59,12 @@ export class LoadDataComponent implements OnInit {
     };
 
     addYearCommit(): void {
-      this.headerYears.push(this.newYearName);
+      var newHeaders = new Array<number>();
+      this.headerYears.forEach(x => newHeaders.push(x));
+      newHeaders.push(+this.newYearName);
+      this.headerYears = newHeaders;
       this.loadCategories.forEach(x => x.details.push(0));
       this.newYearName = null;
-
     };
 
     removeYearToggle(): void {
@@ -71,8 +73,11 @@ export class LoadDataComponent implements OnInit {
     };
 
     removeYearCommit(): void {
-      var index = this.headerYears.indexOf(this.removeYearName);
-      this.headerYears.splice(index, 1);
+      var newHeaders = new Array<number>();
+      this.headerYears.forEach(x => newHeaders.push(x));
+      var index = newHeaders.indexOf(this.removeYearName);
+      newHeaders.splice(index, 1);
+      this.headerYears = newHeaders;
       this.loadCategories.forEach(x => x.details.splice(index, 1));
       this.removeYearName = null;
     };

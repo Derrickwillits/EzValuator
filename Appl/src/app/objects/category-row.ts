@@ -1,7 +1,7 @@
 export class CategoryRow {
     id: number;
     name: string;
-    details: [number];
+    details: number[];
     children: CategoryRow[];
 
     constructor() {};
