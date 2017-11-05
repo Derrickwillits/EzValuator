@@ -23,6 +23,7 @@ export class LoadDataComponent implements OnInit {
     removeYearName: number;
     headerYears = [2014,2015,2016];
     loadCategories: CategoryRow[];
+    rowTotals: number[];
 
     // //Excel Grid Properties
     // columnHeaders = ['Categories', '2016', '2015', '2014'];
@@ -75,7 +76,7 @@ export class LoadDataComponent implements OnInit {
     removeYearCommit(): void {
       var newHeaders = new Array<number>();
       this.headerYears.forEach(x => newHeaders.push(x));
-      var index = newHeaders.indexOf(this.removeYearName);
+      var index = newHeaders.indexOf(+this.removeYearName);
       newHeaders.splice(index, 1);
       this.headerYears = newHeaders;
       this.loadCategories.forEach(x => x.details.splice(index, 1));
@@ -94,6 +95,7 @@ export class LoadDataComponent implements OnInit {
       this.removeYearFlag = false;
       this.addYearFlag = false;
       this.dataSource = new UserDataService();
+      this.rowTotals = new Array<number>();
 
       this.loadCategories = new Array<CategoryRow>();
       var category1 = new CategoryRow();

@@ -23,9 +23,15 @@
         </form>
         <div>
             <h3>Revenue</h3>
-            <tree-grid [inputColumns]="headerYears" [categories]="loadCategories"></tree-grid>
+            <tree-grid [inputColumns]="headerYears" [categories]="loadCategories" [sumRows]="rowTotals"></tree-grid>
             <!--excel-grid [passedColHeaders]="columnHeaders" [passedData]="gridDataRevenue" [passedNumberOfColumns]="numberOfColumns"></excel-grid-->
-            <label>Total Revenue:</label>
+            <div>
+                <label>Total Revenue:</label>
+                <div id="Totals" *ngFor="let rowTotal of rowTotals">
+                    <label>{{rowTotal}}</label>
+                </div>
+            </div>
+            
         </div>
         <br>
         <div>

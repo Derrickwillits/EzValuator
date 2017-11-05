@@ -8,9 +8,9 @@ import { CategoryDataService } from './services/category-data.service';
   styleUrls: ['./css/tree-grid.component.css']
   //providers: [CategoryDataService]
 })
-export class TreeGridComponent implements OnChanges {
+export class TreeGridComponent implements OnChanges, OnInit {
 
-    constructor(private categoryDataService: CategoryDataService) {};
+    constructor(private categoryDataService: CategoryDataService, ) {};
 
     @Input() inputColumns: number[];
     @Input() categories: CategoryRow[];
@@ -18,10 +18,30 @@ export class TreeGridComponent implements OnChanges {
     private headers: number[];
     private categoryRows: CategoryRow[];
 
-    columnIndices: number[];
-    newDetailIndices: number[];
+    @Input() sumRows: number[];
 
     ngOnChanges(): void {
+      this.sortData();
+      this.recalcTotals();
+      };
+
+
+    ngOnInit(): void {
+      this.sumRows = new Array<number>();
+    };
+
+    private recalcTotals(): void{
+      this.sumRows = new Array<number>();
+      for(var i = 0; i < this.headers.length; i++){
+        var tempSum = 0;
+        for(var i1 = 0; i1 < this.categoryRows.length; i1++){
+          tempSum = tempSum + this.categories[i1].details[i];
+          };
+        this.sumRows.splice(i, 0, tempSum);
+        };
+    };
+
+    private sortData(): void {
       var newHeaders = new Array<number>();
       var newMap = new Map<number, number>();
       var remove9999 = new Array<number>();
@@ -60,5 +80,6 @@ export class TreeGridComponent implements OnChanges {
       this.headers = newHeaders;
       this.categoryRows = this.categories;
     };
+
     
 }
