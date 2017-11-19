@@ -12,13 +12,20 @@ export class TreeGridComponent implements OnChanges, OnInit {
 
     constructor(private categoryDataService: CategoryDataService, ) {};
 
+
+
     @Input() inputColumns: number[];
     @Input() categories: CategoryRow[];
 
-    private headers: number[];
-    private categoryRows: CategoryRow[];
+    // private headers: number[];
+    // private categoryRows: CategoryRow[];
 
     @Input() sumRows: number[];
+
+    trackByIndex(index: number, obj: any): any {
+      return index;
+    }
+
 
     ngOnChanges(): void {
       this.sortData();
@@ -32,9 +39,9 @@ export class TreeGridComponent implements OnChanges, OnInit {
 
     private recalcTotals(): void{
       this.sumRows = new Array<number>();
-      for(var i = 0; i < this.headers.length; i++){
+      for(var i = 0; i < this.inputColumns.length; i++){
         var tempSum = 0;
-        for(var i1 = 0; i1 < this.categoryRows.length; i1++){
+        for(var i1 = 0; i1 < this.categories.length; i1++){
           tempSum = tempSum + this.categories[i1].details[i];
           };
         this.sumRows.splice(i, 0, tempSum);
@@ -77,8 +84,7 @@ export class TreeGridComponent implements OnChanges, OnInit {
         };
         this.categories[i].details = tempArray;
       };
-      this.headers = newHeaders;
-      this.categoryRows = this.categories;
+      this.inputColumns = newHeaders;
     };
 
     

@@ -1,23 +1,22 @@
-
-<h3 *ngFor="let header of headers"></h3>
-<div *ngIf="categories">
-    <div id="yearLabel" *ngFor="let header of headers">
-        <label>{{header}}</label>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div *ngFor="let category of categoryRows" class="categories">
-            <mat-form-field id="inputFormClass" *ngFor="let detail of category.details">
-                <input id="inputClass" matInput placeholder="Value" name="details" value="{{detail}}">
+<form #treeGridForm="ngForm">
+    <h3 *ngFor="let header of inputColumns"></h3>
+    <div *ngIf="categories">
+        <div id="yearLabel" *ngFor="let header of inputColumns">
+            <label>{{header}}</label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div *ngFor="let category of categories; let indexCategory = index; trackBy:trackByIndex">
+            <mat-form-field id="inputFormClass" *ngFor="let detail of category.details;let indexDetail = index; trackBy:trackByIndex">
+                <input id="inputClass" matInput name="detail--{{indexCategory}}--{{indexDetail}}" [(ngModel)]="categories[indexCategory].details[indexDetail]" value="{{categories[indexCategory].details[indexDetail]}}">
             </mat-form-field>
             <br>
             <label>{{category.name}}</label>
             <br>
             <br>
             <br>
-    </div> 
-</div>
-
-
-
+            VALUES: {{category.details}}
+        </div>
+    </div>
+</form>

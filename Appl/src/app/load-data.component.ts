@@ -101,11 +101,11 @@ export class LoadDataComponent implements OnInit {
       var category1 = new CategoryRow();
       category1.id = 2;
       category1.name = "Revenue";
-      category1.details = [1000, 2000, 3000];
+      category1.details = [5000, 2000, 3000];
       var category2 = new CategoryRow();
       category2.id = 3;
       category2.name = "More Revenue";
-      category2.details = [4000, 5000, 6000];
+      category2.details = [4000, 5000, 10000];
       this.loadCategories.push(category1);
       this.loadCategories.push(category2);
     };

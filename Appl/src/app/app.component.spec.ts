@@ -8,10 +8,10 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+  it('should contain a link to home as the first link', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(app.myData[0].name).toBe('Home');
   }));
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
