@@ -24,12 +24,9 @@ import { ProjectsComponent } from './projects.component';
 import { LoadDataComponent } from './load-data.component';
 import { AdjustFinancialsComponent } from './adjust-financials.component';
 import { ReportsComponent } from './reports.component';
-import { GridComponent } from './grid.component';
 import { TreeGridComponent } from './tree-grid.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoryDataService } from './services/category-data.service';
-
-import { HotTableModule } from 'ng2-handsontable';
 
 @NgModule({
   declarations: [
@@ -39,7 +36,6 @@ import { HotTableModule } from 'ng2-handsontable';
     LoadDataComponent,
     AdjustFinancialsComponent,
     ReportsComponent,
-    GridComponent,
     TreeGridComponent
   ],
   imports: [
@@ -58,7 +54,6 @@ import { HotTableModule } from 'ng2-handsontable';
     MatTableModule,
     MatRadioModule,
     AppRoutingModule,
-    HotTableModule,
     HttpClientModule
   ],
   providers: [ CategoryDataService ],
